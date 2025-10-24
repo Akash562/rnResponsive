@@ -7,7 +7,7 @@ import {
     ScrollView,
     Switch,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+// import { Ionicons } from "@expo/vector-icons";
 import { FontSizes, Spacing, Radius, scale } from "../utils/metrics";
 import { useTheme } from "../utils/theme";
 
@@ -34,7 +34,7 @@ export default function SelectAddressScreen() {
         <View style={[styles.container, { backgroundColor: colors.background }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Ionicons name="chevron-back" size={scale(22)} color={colors.textPrimary} />
+                {/* <Ionicons name="chevron-back" size={scale(22)} color={colors.textPrimary} /> */}
                 <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
                     Select Delivery Address
                 </Text>
@@ -58,7 +58,7 @@ export default function SelectAddressScreen() {
                     <Text style={[styles.locationText, { color: colors.textPrimary }]}>
                         Use Current Location
                     </Text>
-                    <Ionicons name="locate" size={scale(20)} color={colors.danger} />
+                    {/* <Ionicons name="locate" size={scale(20)} color={colors.danger} /> */}
                 </TouchableOpacity>
 
                 {addresses.map((item) => (
@@ -75,7 +75,7 @@ export default function SelectAddressScreen() {
                         onPress={() => setSelectedAddress(item.id)}
                     >
                         <View style={styles.addressHeader}>
-                            <Ionicons name="location-outline" size={scale(20)} color={colors.success} />
+                            {/* <Ionicons name="location-outline" size={scale(20)} color={colors.success} /> */}
                             <Text style={[styles.addressTitle, { color: colors.textPrimary }]}>
                                 {item.title}
                             </Text>
