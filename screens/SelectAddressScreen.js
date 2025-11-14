@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    ScrollView,
-    Switch,
-} from "react-native";
-// import { Ionicons } from "@expo/vector-icons";
-import { FontSizes, Spacing, Radius, scale } from "../utils/metrics";
-import { useTheme } from "../utils/theme";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Switch, } from "react-native";
+import { useTheme, FontSizes, Radius, Spacing, fontType } from '../utils/theme';
 
 export default function SelectAddressScreen() {
+
     const [selectedAddress, setSelectedAddress] = useState("Home");
     const { colors, theme, toggleTheme } = useTheme();
 
@@ -32,10 +24,15 @@ export default function SelectAddressScreen() {
 
     return (
         <View style={[styles.container, { backgroundColor: colors.background }]}>
+
             {/* Header */}
             <View style={styles.header}>
                 {/* <Ionicons name="chevron-back" size={scale(22)} color={colors.textPrimary} /> */}
-                <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
+                <Text style={[styles.headerTitle, {
+                    color: colors.textPrimary,
+                    fontFamily: fontType.Bold,
+                    fontSize: FontSizes.title
+                }]}>
                     Select Delivery Address
                 </Text>
 
@@ -55,7 +52,7 @@ export default function SelectAddressScreen() {
                         { backgroundColor: colors.locationBg, borderColor: colors.border },
                     ]}
                 >
-                    <Text style={[styles.locationText, { color: colors.textPrimary }]}>
+                    <Text style={[styles.locationText, { color: colors.textPrimary, fontSize: FontSizes.large }]}>
                         Use Current Location
                     </Text>
                     {/* <Ionicons name="locate" size={scale(20)} color={colors.danger} /> */}
@@ -97,8 +94,7 @@ export default function SelectAddressScreen() {
             </ScrollView>
 
             <TouchableOpacity
-                style={[styles.continueBtn, { backgroundColor: colors.accent }]}
-            >
+                style={[styles.continueBtn, { backgroundColor: colors.accent }]}>
                 <Text style={[styles.continueText, { color: colors.textPrimary }]}>
                     Continue
                 </Text>
