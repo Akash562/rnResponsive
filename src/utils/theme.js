@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { useColorScheme, Dimensions } from "react-native";
+import { useColorScheme, Dimensions, Platform } from "react-native";
 
 const ThemeContext = createContext();
 const { width, height } = Dimensions.get("window");
